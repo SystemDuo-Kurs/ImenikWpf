@@ -53,12 +53,14 @@ namespace ImenikWpf
 
         private void Dodaj(object sender, RoutedEventArgs e)
         {
-            if (!(DataContext is Osoba o && Osobe.Contains(o)))
+            Editor ed = new();
+            ed.Owner = this;
+            ed.ShowDialog();
+
+            if (ed.DialogResult.HasValue && ed.DialogResult.Value)
             {
-                Osobe.Add(DataContext as Osoba);
+                Osobe.Add(ed.DataContext as Osoba);
             }
-            DataContext = new Osoba();
-            dgOsoba.SelectedItem = null;
         }
 
         private void Brisanje(object sender, RoutedEventArgs e)
@@ -71,7 +73,10 @@ namespace ImenikWpf
 
         private void Izmena(object sender, RoutedEventArgs e)
         {
-            DataContext = dgOsoba.SelectedItem;
+            Editor ed = new();
+            ed.Owner = this;
+            ed.DataContext = dgOsoba.SelectedItem;
+            ed.ShowDialog();
         }
 
         private void Promena(object sender, SelectionChangedEventArgs e)

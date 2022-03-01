@@ -69,6 +69,21 @@ namespace ImenikWpf
             }
         }
 
+        private int _nesto;
+
+        public int Nesto
+        {
+            get
+            {
+                return _nesto;
+            }
+            set
+            {
+                _nesto = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Nesto"));
+            }
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public override bool Equals(object? obj)
@@ -81,11 +96,6 @@ namespace ImenikWpf
             {
                 return false;
             }
-        }
-
-        public override int GetHashCode()
-        {
-            return BrojTelefona.GetHashCode() + Email.GetHashCode();
         }
     }
 }

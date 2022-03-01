@@ -7,15 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="508" Width="800" FontSize="33" Closed="Zatvaranje">
     <DockPanel>
-        <StackPanel DockPanel.Dock="Left">
-            <Label>Ime:</Label>
-            <TextBox Text="{Binding Ime}" MinWidth="200" />
-            <Label>Prezime:</Label>
-            <TextBox Text="{Binding Prezime}" MinWidth="200" />
-            <Label>Mejl:</Label>
-            <TextBox Text="{Binding Email}" MinWidth="200" />
-            <Label>Telefon:</Label>
-            <TextBox Text="{Binding BrojTelefona}" MinWidth="200" />
+        <StackPanel DockPanel.Dock="Left" VerticalAlignment="Center">
+
             <Button Click="Dodaj">Unos</Button>
             <Button Name="dugmeBrisanje"  IsEnabled="False" Click="Brisanje">Brisanje</Button>
             <Button Name="dugmeIzmena"  IsEnabled="False" Click="Izmena">Izmena</Button>
